@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="grid-1">
+                <div class="btn">
+                    <img src="assets/img/align-right.svg" alt="">
+                </div>
+                <div class="dot-horis">
+                    <img src="assets/img/Union (1).svg" alt="">
+                </div>
+                <div class="dot-verti">
+                    <img src="assets/img/Union.svg" alt="">
+                </div>
+                <div class="content">
+                    <h1>Hi Samantha</h1>
+                    <p>Welcome back to the workspace, we missed You!</p>
+                    <div class="container-1">
+                        <span class="icon"><i class="fa fa-search"></i></span>
+                        <input type="search" id="search" placeholder="Search..." />
+                    </div>
+                    <div style="clear: both;"></div>
+                    <h4>Projects <span>(13)</span></h4>
+                    <div class="projects">
+                        <div class="project1">
+                            <div class="box">
+                                <h1>GA</h1>
+                            </div>
+                            <p>Green House</p>
+                        </div>
+                        <div class="project2">
+                            <div class="box selected">
+                                <h1>CP</h1>
+                            </div>
+                            <p>Cyber Punk</p>
+                        </div>
+                        <div class="project3">
+                            <div class="box notif">
+                                <h1>EC</h1>
+                            </div>
+                            <p>Easy Crypto</p>
+                        </div>
+                        <div class="project4">
+                            <div class="box">
+                                <h1>TA</h1>
+                            </div>
+                            <p>Travel App</p>
+                        </div>
+                        <div class="project5">
+                            <div class="box notif">
+                                <h1>LP</h1>
+                            </div>
+                            <p>Landing Page</p>
+                        </div>
+                        <div class="project6">
+                            <div class="box">
+                                <h1>8+</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-2">
+                <button id="myBtn">+</button>
+                <div class="users">
+                    <img src="assets/img/user1.png" width="40px" alt="">
+                    <img src="assets/img/user2.png" width="40px" alt="">
+                    <img src="assets/img/user3.png" width="40px" alt="">
+                    <div class="plus">
+                        <h1>+</h1>
+                    </div>
+                </div>
+                <h1>Cyber Punk</h1>
+                <p style="width: 400px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, vel.</p>
+                <div class="timetask">
+                    <h4>Today</h4>
+                    <img src="assets/img/three-dots-more-indicator.svg" width="25px">
+                </div>
+                <div class="task" id="add">
+                    <div class="group">
+                        <label class="control control--checkbox">
+                            Create initial layout for homepage
+                            <input type="checkbox" checked="checked" />
+                            <div class="control__indicator"></div>
+                        </label>
+                        <div class="aproved">
+                            <p>Approved</p>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <label class="control control--checkbox">
+                            Fixing icons with transparant background
+                            <input type="checkbox" checked="checked" />
+                            <div class="control__indicator"></div>
+                        </label>
+                        <div class="progress">
+                            <p>In Progress</p>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <label class="control control--checkbox">
+                            Fixing icons with transparant background
+                            <input type="checkbox" checked="checked" />
+                            <div class="control__indicator"></div>
+                        </label>
+                        <div class="progress">
+                            <p>In Progress</p>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <label class="control control--checkbox">
+                            Discussion regarding workflow improvement
+                            <input type="checkbox" checked="checked" />
+                            <div class="control__indicator"></div>
+                        </label>
+                        <div class="review">
+                            <p>In Review</p>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <label class="control control--checkbox">
+                            Create quotation for app redisign project
+                            <input type="checkbox" />
+                            <div class="control__indicator"></div>
+                        </label>
+                        <div class="waiting">
+                            <p>Waiting</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("myBtn").addEventListener("click", addTask);
+        const taskDesk = [
+            'Create initial layout for homepage',
+            'Create quotation for app redisign project',
+            'Discussion regarding workflow improvement',
+            'Fixing icons with transparant background'
+            ];
+        const classStatus = [
+            'aproved',
+            'progress',
+            'review',
+            'waiting'
+        ];
+        const stringStatus = [
+            'Approved',
+            'In Progress',
+            'In Review',
+            'Waiting'
+        ];
+        function addTask() {
+            let randomTask = Math.floor(Math.random() * 4);
+            let randomClass = Math.floor(Math.random() * 4);
+            let taskRandom = `
+            <div class="group">
+                <label class="control control--checkbox">
+                    ${taskDesk[randomTask]}
+                    <input type="checkbox" />
+                    <div class="control__indicator"></div>
+                </label>
+                <div class="${classStatus[randomClass]}">
+                    <p>${stringStatus[randomClass]}</p>
+                </div>
+            </div>
+            `;
+            document.getElementById("add").innerHTML += taskRandom
+        }
+    </script>
+</body>
+
+</html>
