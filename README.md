@@ -1,4 +1,5 @@
 # scss ui
+Dibuat menggunakan html, sass/scss, dan javascript
 
 Demo: https://bit.ly/3nfOlfV
 
